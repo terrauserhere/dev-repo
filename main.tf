@@ -29,7 +29,7 @@ resource "google_compute_autoscaler" "myscaling" {
   zone = "us-central1-c"
   autoscaling_policy {
     max_replicas = 5
-    min_replicas = 2
+    min_replicas = 4
     cpu_utilization {
       target = 0.5
     }
