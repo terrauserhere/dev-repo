@@ -1,13 +1,13 @@
 provider "google" {
-  project = var.projectid
-  region = var.regionname
+  project = "terraformprject"
+  region = "us-central1"
   credentials = file("./terrakey.json")
 
 }
 module "instancetemplate" {
   source = "./modules/instancetemplate"
-  instancetemplate_machinetype = var.machinetype
-  instancetemplate_imagename = var.imagename
+  instancetemplate_machinetype = "f1-micro"
+  instancetemplate_imagename = "centos-cloud/centos-7"
 }
 resource "google_compute_instance_group_manager" "appserver" {
   name = "appserver-igm"
